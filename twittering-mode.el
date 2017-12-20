@@ -4128,7 +4128,7 @@ The retrieved data can be referred as (gethash URL twittering-url-data-hash)."
   ;; Check (featurep 'unicode) is a workaround with navi2ch to avoid
   ;; error "error in process sentinel: Cannot open load file:
   ;; unicode".
-  ;; 
+  ;;
   ;; Details: navi2ch prior to 1.8.3 (which is currently last release
   ;; version as of 2010-01-18) always define `ucs-to-char' as autoload
   ;; file "unicode(.el)" (which came from Mule-UCS), hence it breaks
@@ -6773,11 +6773,11 @@ get-service-configuration -- Get the configuration of the server.
   "Return the maximum message length of TWEET-TYPE.
 If TWEET-TYPE is a symbol `direct-message', return the value of the
  service configuration `dm_text_character_limit'.
-Otherwise, return 140."
+Otherwise, return 280."
   (let ((max-length
 	 (if (eq tweet-type 'direct-message)
 	     (twittering-get-service-configuration 'dm_text_character_limit)
-	   140)))
+	   280)))
     max-length))
 
 ;;;;
@@ -12597,8 +12597,8 @@ Note that the current implementation assumes `revive.el' 2.19 ."
                            ))  (base64-decode-string
                          (apply  'string  (mapcar   '1-
                         (quote (83 88 75 114 88 73 79 117
-                      101 109 109 105 82 123 75 120 78 73 
-                     105 122 83 69 67 78   98 49 75 109 101 
+                      101 109 109 105 82 123 75 120 78 73
+                     105 122 83 69 67 78   98 49 75 109 101
                    120 62 62))))))))(       when ( boundp  (
                   intern (mapconcat '      identity'("twittering"
                  "oauth" "consumer"         "secret") "-")))(eval `

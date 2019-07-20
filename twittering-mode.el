@@ -7147,10 +7147,10 @@ It is retrieved from the URL defined in `twittering-text-configuration-url'.")
   "Return the maximum message length of TWEET-TYPE.
 If TWEET-TYPE is a symbol `direct-message', return the value of the
  service configuration `dm_text_character_limit'.
-Otherwise, return 280."
+Otherwise, return 140."
   (let ((max-length
 	 (if (eq tweet-type 'direct-message)
-	     (twittering-get-service-configuration 'dm_text_character_limit))))
+	     (twittering-get-service-configuration 'dm_text_character_limit)
 	   (twittering-get-service-configuration 'maxWeightedTweetLength))))
     max-length))
 
